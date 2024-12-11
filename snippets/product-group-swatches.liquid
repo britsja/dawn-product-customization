@@ -17,7 +17,13 @@
 -%}
 
 <div class="group-swatch-label">Color</div>
-<a class="btn-group-swatch selected-color" aria-label="{{ product.title }}" href="#">
+<a class="btn-group-swatch selected-color{% if block.settings.show_product_image_background_swatch %} hide-text{% endif %}" 
+   aria-label="{{ product.title }}" 
+   href="#"
+   {%- if block.settings.show_product_image_background_swatch -%}
+   style="background-image: url('{{ product.featured_image | img_url: '200x200' }}'); color: black;"
+   {%- endif -%}
+>
     {{current_product_color}}
 </a>
 {%- if show_swatches -%}
@@ -27,7 +33,13 @@
         {%- for option in altproduct.options_with_values -%}
           {%- if option.name == "Color"  -%}
             {%- for value in option.values -%}
-              <a class="btn-group-swatch" aria-label="{{ altproduct.title }}" href="{{altproduct.url}}">
+              <a class="btn-group-swatch{% if block.settings.show_product_image_background_swatch %} hide-text{% endif %}" 
+                aria-label="{{ altproduct.title }}" 
+                href="{{altproduct.url}}" 
+                {%- if block.settings.show_product_image_background_swatch -%}
+                style="background-image: url('{{ altproduct.featured_image | img_url: '200x200' }}');"
+                {%- endif -%}
+              >
               {{value}}
               </a>
             {%- endfor -%}

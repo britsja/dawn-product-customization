@@ -12,13 +12,10 @@ Edit - product-variant-picker to add toggle and color variant check to load grou
 
 Done:
 Loop through products in collection, then by metafield property and display color options with clickable links to each product. 
+Change or give option to show t-shirt colors instead of color names
+Test mobile responsiveness
 
 TO DO:
 
-Change or give option to show t-shirt colors instead of color names
-
-Test mobile responsiveness
-
 Readme - Update Readme with client instructions (non-developer)
-
 Overall - SEO and Accessibility checks

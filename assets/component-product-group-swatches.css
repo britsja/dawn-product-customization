@@ -32,3 +32,9 @@
 .hide-this {
   display: none;
 }
+
+.hide-text {
+  font-size: 0px;
+  min-width: 36px;
+  min-height: 36px;
+}
