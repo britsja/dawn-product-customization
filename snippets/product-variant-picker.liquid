@@ -44,6 +44,15 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         {%- if block.settings.show_grouped_color_swatches and option.name == "Color"  -%}
+          <fieldset class="js product-form__input product-form__input--pill hide-this">
+            <legend class="form__label">{{ option.name }}</legend>
+            {% render 'product-variant-options',
+              product: product,
+              option: option,
+              block: block,
+              picker_type: picker_type
+            %}
+          </fieldset>
           {% render 'product-group-swatches',
             product: product,
             option: option,
