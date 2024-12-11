@@ -74,7 +74,7 @@ To enable and configure the product grouping features:
 
 ## Demonstration
 - **Light Shirts Grouped Together:** https://jan-funky-shirts.myshopify.com/products/t-shirt-pink with color text being used.
-- **Dark Shirts Grouped Together:** https://jan-funky-shirts.myshopify.com/products/t-shirt-pink with product image swatches used.
+- **Dark Shirts Grouped Together:** https://jan-funky-shirts.myshopify.com/products/t-shirt-black with product image swatches used.
 - **Collection Showing Individual Products:** https://jan-funky-shirts.myshopify.com/collections/all 
 
 ---
