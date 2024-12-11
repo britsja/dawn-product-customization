@@ -1,0 +1,25 @@
+.group-swatch-label {
+  display: block;
+  margin-bottom: .6rem;
+  font-size: 1.3rem;
+  line-height: calc(1 + .5 / var(--font-body-scale));
+  letter-spacing: .04rem;
+}
+
+.btn-group-swatch {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  border: var(--variant-pills-border-width) solid rgba(var(--color-foreground),var(--variant-pills-border-opacity));
+  border-radius: var(--variant-pills-radius);
+  display: inline-block;
+  margin: .7rem .5rem .2rem 0;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  line-height: 1;
+  text-align: center;
+  transition: border var(--duration-short) ease;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
