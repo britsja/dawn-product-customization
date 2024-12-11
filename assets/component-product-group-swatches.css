@@ -7,8 +7,8 @@
 }
 
 .btn-group-swatch {
-  background-color: rgb(var(--color-foreground));
-  color: rgb(var(--color-background));
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
   border: var(--variant-pills-border-width) solid rgba(var(--color-foreground),var(--variant-pills-border-opacity));
   border-radius: var(--variant-pills-radius);
   display: inline-block;
@@ -22,6 +22,11 @@
   cursor: pointer;
   position: relative;
   text-decoration: none;
+}
+
+.selected-color {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
 }
 
 .hide-this {
