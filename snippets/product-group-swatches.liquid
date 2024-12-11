@@ -1,5 +1,43 @@
 {{ 'component-product-group-swatches.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign current_product_collection = null
+  assign group_metafield = product.metafields.custom.product_grouping  
+  assign current_product_color = product.product_option_value
+  for value in option.values limit: 1
+    assign current_product_color = value
+  endfor
+  for collection in product.collections limit: 1
+    assign current_product_collection = collection
+  endfor
+  assign show_swatches = false
+  if current_product_collection and group_metafield and current_product_color 
+    assign show_swatches = true
+  endif
+-%}
+
+<script>
+  console.log("show_swatches: {{show_swatches}}")
+</script>
+
 <div class="group-swatch-label">Color</div>
-<a class="btn-group-swatch" aria-label="Color Test Button" href="#">
-    Test Swatch
+<a class="btn-group-swatch" aria-label="{{ product.title }}" href="#">
+    {{current_product_color}}
 </a>
+{%- if show_swatches -%}
+  {%- for altproduct in collections[current_product_collection.title].products -%}
+    {%- if altproduct.metafields.custom.product_grouping == group_metafield -%}
+      {%- unless altproduct.title == product.title -%}
+        {%- for option in altproduct.options_with_values -%}
+          {%- if option.name == "Color"  -%}
+            {%- for value in option.values -%}
+              <a class="btn-group-swatch" aria-label="{{ altproduct.title }}" href="{{altproduct.url}}">
+              {{value}}
+              </a>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
